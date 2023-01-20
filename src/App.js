@@ -10,7 +10,9 @@ class App extends React.Component {
     imgSrc : 'https://th.bing.com/th/id/R.1194254c298934c9a686d53059d997f7?rik=1V%2ftCR1CTgggfQ&riu=http%3a%2f%2fwww.cpie32.org%2fwp-content%2fuploads%2f2017%2f01%2fno-image.png&ehk=8kd2qt%2fFJZqmxkhcT8STDMMkmRh%2bS2G9FDwZdQ%2fanF8%3d&risl=&pid=ImgRaw&r=0',
     profession : 'studiant',
     
-      show: false
+      show: false,
+      count: 0,
+      intervalle: null
       
      
 
@@ -18,7 +20,7 @@ class App extends React.Component {
   }
   componentDidMount(){
     console.log('Hi Counter Comp is mounted');
-    this.setState({intervalle: setInterval(()=> this.setState({show: this.state.count+1}),1000)})
+    this.setState({intervalle: setInterval(()=> this.setState({count: this.state.count+1}),1000)})
 }
 
 
@@ -40,7 +42,8 @@ class App extends React.Component {
           className="d-block w-100"
           src= {this.state.imgSrc}
           alt="First slide"/>
-         
+    
+              <h3>{this.state.count}</h3>
 
           </div>
           }
